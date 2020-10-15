@@ -1,0 +1,46 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.top-container{
+    padding: 100px 0;
+    background-color: #23424A;
+    color: #FFF;
+}
+
+.wel-note{
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.top-container__text{
+    width: 60%;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #38CFD9;
+    padding: 0.25em 1.25em;
+    border-radius: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #23424A;
+    font-weight: 900;
+    padding: 0.75em 2em;
+}
+
+.btn:hover,
+.btn:focus{
+    opacity: 0.75;
+}
