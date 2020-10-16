@@ -203,3 +203,105 @@ eg:  instead of setting, `flex-direction: column; flex-wrap: wrap;`
         <img src="./images/flexbox-9.png"
             alt="flex-box"
             style="display: block; margin-right: 10px; width: 400px" />
+
+
+## Adding Gap between flex items
+---
+* To adjust the gap between flex items use the `gap` property.
+  ```css
+  .row{
+      display: flex;
+      gap: 100px;
+  }
+  ```
+* Creates a space between flex items and does not affects the outside items, but it is relatively new,
+don't got all browser support(chrome, firefox, chrome android all supports it)..
+* But there is an trick, using a weird selector,
+  ```css
+  .col + .col {
+      margin-left: 100px;
+  }
+  ```
+  It is a combinator selector, ///CSS combinators/\
+  Here `+` selects the adjacent sibling, its looking if something comes before it, so the first column got\
+  nothing before it.\
+  So it select 2 and 3 and adds a margin left to it..
+
+  ## CSS combinators
+  ---
+  * Adjacent Sibling Selector
+  Basic styles and markup.
+  ```html
+  <body class="first-example">
+    <div class="example one"></div>
+    <div class="example two"></div>
+    <div class="example three"></div>
+    <div class="example four"></div>
+    <div class="example five"></div>
+  </body>
+  ```
+  ```css
+  *, ::before, ::after{
+      box-sizing: border-box;
+  }
+
+  body{
+      margin: 0;
+      background: #efefef;
+      color: #333;
+      font-family: basic-sans, sans-serif;
+  }
+
+  .first-example{
+      display: block;
+  }
+
+  .example{
+      padding: 2em;
+      width: 50%;
+      margin: 1em auto;
+      background: teal;
+  }
+  ```
+  <img src="./images/combinators-1.png"
+            alt="flex-box"
+            style="display: block; margin-right: 10px; width: 400px" />
+
+  Using the adjacent selector,
+  ```css
+  .example + .example{
+      background: tomato;
+  }
+  ```
+  <img src="./images/combinators-2.png"
+            alt="flex-box"
+            style="display: block; margin-right: 10px; width: 400px" />
+
+  It looks the first `example`, and looks for any `example` element before it- no, but for the second, third...\
+  all got an example `element` just before them, so they gets selected..
+
+  It can be like this also,
+  ```css
+  div + .example{
+      background: tomato;
+  }
+  ```
+  Which one got a `div` before one, or it can go all the way up to,
+
+  It looks only the siblings, not the parent if the `.example` is inside a div it not gets selected.
+  ```css
+  * + *{
+      margin: 1em 0 0;
+  }
+  ```
+  Just mean, select all elements that got some element before it (the very first element not selected), and add a top-bottom margin of 1 em. Its called the **Owl Selector** (First suggested by Heydon Pickering)..
+
+  It is applicable for all elements in a container, and because the margin is only top, it avoids both top and bottom extra spaces and also cz it is in `em`, for large font-sizes like `h2`, `h1` the margin will be higher.
+
+  Also this thing got low specificity, so it can be easily overwrite, for example it creates problems with flex box, we can just restore the margins of a flexbox container by using,
+  ```css
+  .box > *{
+    margin-top: 0;
+  }
+  ```
+  That means, All the direct children of the `box` container.
