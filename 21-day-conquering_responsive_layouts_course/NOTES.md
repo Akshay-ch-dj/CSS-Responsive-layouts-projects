@@ -169,8 +169,11 @@ for each particular element, it is easy to place or control them (for eg, adding
     remember the original boilerplate is actually responsive, your design philosophy is first restrict it, then
     you trying to make it responsive.
 * **NESTING THINGS IS BAD IDEA, GIVE IT A CLASS POSSIBLE**, you are writing more nested things in sass, you badly need  good training in frontend..so literally add a class on everything possible... make it as a habit
+---
 
-### What is block-element-modifier(BEM) naming convention in CSS
+## What is block-element-modifier(BEM) naming convention in CSS
+---
+
 * The classes for child elements assigned with double underscore, for eg: if there is a parent `card` class and
 child image inside it the image class naming convention is like `card__image`.
 <img src="./images/BEM_convention.png"
@@ -198,9 +201,10 @@ always stick with base class + modifier class concept for that.
 }
 ```
 * it just compile normally no weird nesting happening.
+---
 
-### What is box-sizing = border-box?
-
+## What is box-sizing = border-box?
+---
 * To understand box-sizing, one need to understand the box-model in css. lets do it with an example\
 It is the sample html,
 ```html
@@ -270,4 +274,4 @@ container, add add the same styling as above and observe the differences with re
     style="display: block; margin-right: 10px; width: 600px" />
 
 * So by changing box-sizing to border box, all the things happening on the inside, it makes things lot more\
-predictable and easier to control, 
+predictable and easier to control,
