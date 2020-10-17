@@ -305,3 +305,28 @@ don't got all browser support(chrome, firefox, chrome android all supports it)..
   }
   ```
   That means, All the direct children of the `box` container.
+
+  ## Comparison and learning from Day 8 solutions
+  ---
+  1. Always use classes possible, don't chain(descendance) things unnecessarily, like `.container .row h2`, like that give it a class always if possible and do the design.
+  2. Use simple custom classes, like for a specific color, use a class and add that class wherever to get that color, same for `text alignment`, absolute centering etc..
+  3. Divide a page into `section`s, follow some semantics always, and put scopes for improvement.
+
+## Reducing HTML,
+* Moving the row class(that got the `display: flex`), with the container class (`width: 80%`), thereby reducing one div.
+* Assigning a single major function to each class.
+
+## Adding hero image
+* Adding an image in the hero section.
+* Fixing image inside a div.\
+  basic responsiveness
+  ```css
+  img{
+    display: block;
+    max-width:100%;
+  }
+
+## Column width and flexbox
+---
+* Using the `flex-grow`, properties, if given width of 100% to both hero__text and img div, both gonna occupy the same space,
+* But what we need is the text occupy 60% of the width and the image gets 40% constantly.
