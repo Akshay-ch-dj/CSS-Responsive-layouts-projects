@@ -129,14 +129,15 @@ eg:  instead of setting, `flex-direction: column; flex-wrap: wrap;`
             alt="flex-box"
             style="display: block; margin-right: 10px; width: 400px" />
 
-          It takes all the space left or available (the empty space), if put `flex-grow: 2` on the second child,
-          <img src="./images/flexbox-6.png"
-               alt="flex-box"
-               style="display: block; margin-right: 10px; width: 400px" />
+        It takes all the space left or available (the empty space), if put `flex-grow: 2` on the second child,
 
-          It basically divides the remaining space and first one takes `1/3` part and 2nd child takes `2/3` part,
-          and it is responsive, better suited for responsive design.\
-          If I give `flex-grow: 1` to all, all items takes up equal space.
+       <img src="./images/flexbox-6.png"
+            alt="flex-box"
+            style="display: block; margin-right: 10px; width: 400px" />
+
+       It basically divides the remaining space and first one takes `1/3` part and 2nd child takes `2/3` part,
+       and it is responsive, better suited for responsive design.\
+       If I give `flex-grow: 1` to all, all items takes up equal space.
   3. flex-shrink (opposite to flex-grow)
   4. flex-basis (defines a basic width for individual item, can use instead of width)
 
@@ -330,3 +331,108 @@ don't got all browser support(chrome, firefox, chrome android all supports it)..
 ---
 * Using the `flex-grow`, properties, if given width of 100% to both hero__text and img div, both gonna occupy the same space,
 * But what we need is the text occupy 60% of the width and the image gets 40% constantly.
+
+## DEEP DIVE INTO FLEXBOX
+***
+&copy; Kevin Powell
+
+1. The `align-items: baseline` useful for the parent nav container, if the children got varying font-sizes..
+
+2. The `align-content` for the parent container.
+     * Only works when there is multiple lines of content.
+     * eg:
+      ```html
+      <section class="first-example">
+         <div class="example one">Flex item 1</div>
+         <div class="example two">Flex item 2</div>
+         <div class="example three">Flex item 3</div>
+         <div class="example four">Flex item 4</div>
+         <div class="example five">Flex item 5</div>
+      </section>
+      ```
+      ```css
+       .first-example{
+           background: palegoldenrod;
+           height: 50vh;
+           width: 50vw;
+           padding: 0.5em;
+           margin: 25vh auto 0;
+
+           display: flex;
+           flex-direction: row;
+           flex-wrap: nowrap;
+
+           justify-content: center;
+           align-items: center;
+           /* This will no nothing, there only single line of content */
+           align-content: flex-end;
+       }
+
+       .example{
+           background: teal;
+           margin: 0.5em;
+       }
+      ```
+
+     <img src="./images/flexbox-deep1.png"
+          alt="flex-box"
+          style="display: block; margin-right: 10px; width: 400px" />
+
+    * But if more divs added, and `flex-wrap: wrap`, there willbe multilines and the `aligns-content`\
+    overwrites the `align-items`,
+    <img src="./images/flexbox-deep2.png"
+          alt="flex-box"
+          style="display: block; margin-right: 10px; width: 400px" />
+    * The same values of `justify-content`, exist here too
+
+### `flex-grow` and `flex-shrink` in detail.
+---
+* Using the same html, with only three boxes, and css set to default flex-grow and flex-shrink
+```css
+.one{
+    /* flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 250px; */
+    /* grouped to */
+    flex: 0 1 250px;
+}
+
+.two{
+    flex: 0 1 250px;
+}
+
+.three{
+    flex: 0 1 250px;
+}
+```
+<img src="./images/flexbox-deep3.png"
+          alt="flex-box"
+          style="display: block; margin-right: 10px; width: 400px" />
+
+* Note that the empty space left around cz, of no flex grow values set, if set flex grow values, the item will take the available empty space accordingly as said in the basics.
+* If `flex-shrink` is set like these,
+```css
+.one{
+    flex: 1 1 250px;
+}
+
+.two{
+    flex: 1 1 250px;
+}
+
+.three{
+    flex: 3 3 250px;
+}
+```
+
+* What happens is if the screen size larger than (3 * flex-basis = 750px), the third box will grow 3 x faster than, other two (other two will also grow at a smaller rate, to say somewhat exactly, the empty space at a point (width - 750px) is taken at a time and  1/5 of it is occupied by the first two containers, and 3/5 of it is by the last one (which the flex grow is 3).
+<img src="./images/flexbox-deep4.png"
+          alt="flex-box"
+          style="display: block; margin-right: 10px; width: 400px" />
+* When shrinks (display width less than 750px) the exact opposite happens the 3<sup>rd</sup> one shrinks Thrice (flex-shrink: 3) faster than others.
+<img src="./images/flexbox-deep5.png"
+          alt="flex-box"
+          style="display: block; margin-right: 10px; width: 400px" />
+
+> #### To grab a little more and as a refer to the future, lets create a [managing flex-box codepen](https://codepen.io/akshaych/pen/mdEEQeo) forked from kevins one.
+> #### Here is a [flexbox - playground]() that can be used to play with flexbox.

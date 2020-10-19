@@ -1,0 +1,97 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --sidebar-width: 15rem;
+  --sidebar-container-width: var(--sidebar-width);
+}
+
+body {
+  margin: 0;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: var(--sidebar-container-width) 1fr 1fr;
+      grid-template-columns: var(--sidebar-container-width) 1fr 1fr;
+  -ms-grid-rows: 8rem auto;
+      grid-template-rows: 8rem auto;
+      grid-template-areas: "search search search" "sidebar main main" "sidebar main main";
+}
+
+.grid-items {
+  padding: 4rem;
+}
+
+.search-area {
+  background: pink;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: search;
+  position: relative;
+}
+
+.search-area .toggleBtn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: none;
+}
+
+.sidebar {
+  background-color: green;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 0.7, 0.68, 1.07);
+  transition: -webkit-transform 0.4s cubic-bezier(0.3, 0.7, 0.68, 1.07);
+  transition: transform 0.4s cubic-bezier(0.3, 0.7, 0.68, 1.07);
+  transition: transform 0.4s cubic-bezier(0.3, 0.7, 0.68, 1.07), -webkit-transform 0.4s cubic-bezier(0.3, 0.7, 0.68, 1.07);
+}
+
+.sidebar-container {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  position: relative;
+  padding: 8rem 4rem 4rem;
+}
+
+.main-content {
+  background-color: yellow;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    --sidebar-container-width: 0px;
+  }
+  .search-area .toggleBtn {
+    display: inline-block;
+  }
+  .sidebar {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .sidebar.show {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/*# sourceMappingURL=sidebar_search_respon.css.map */
