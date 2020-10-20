@@ -275,3 +275,94 @@ container, add add the same styling as above and observe the differences with re
 
 * So by changing box-sizing to border box, all the things happening on the inside, it makes things lot more\
 predictable and easier to control,
+
+### Day 9 project-sol comparison
+---
+* Always use `main` tags if applicable.(more semantic html). Everything not needed to be a div.
+* moved from div to `header` -> `main` -> `section`.
+* If the information to be displayed is different from the main it can be set in a `aside` tag.
+* Organizing styles in css, kevin keeps his typography stuffs on the top section.
+
+#### Making a `nav` using flexbox
+
+* Done my soln, crosschecking with kevin's
+* changing the margin to individual items.
+* Adding a move to right, nav__link--right, class to some nav items to move them to right.
+* The `margin-left: auto`,pushes things all the way to left, which is a good approach, another common approaches
+* Using the `justify-content: space-between`, avoiding unnecessary margin on the last item using the, adjacent sibling selector.
+
+#### Adding a nav logo
+* Don't add it to the nav, if it is a link, then there will be two links,to the home section.
+* To solve the spacing issues in navbar using the flexbox.
+```html
+<header class="navbar">
+    <div class="container row">
+        <a href="#" class="nav__logo">
+            <img class="img-nav" src="./images/Avengers-Logo-transparent-PNG-Image.png" alt="loge conquering">
+        </a>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#">home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
+            </ul>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#">Sign In</a></li>
+                <li class="nav__item"><a class="nav__link nav__link--btn" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+```
+```css
+.nav{
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid red;
+}
+
+.nav__list{
+    display: flex;
+    align-items: center;
+
+    border: 2px solid red;
+}
+
+.nav__logo{
+    width: 60px;
+    border: 2px solid orange;
+}
+
+.container{
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid yellow;
+}
+
+```
+
+<img src="./images/challenge-site1.png"
+    alt="border-box"
+    style="display: block; margin-right: 10px; width: 600px" />
+
+* Here the one with yellow borders are the `row` class, having full width and it need the last two timem way up to left and other nav items close to the logo, to do this
+* One method is to give nav a `width: 100%`, then the available space will all taken by the nav, now a lot of `space-between` elements.\
+A flex-grow of 1 (`flex: 1 1 auto;`) gives the same results.
+
+<img src="./images/challenge-site2.png"
+    alt="border-box"
+    style="display: block; margin-right: 10px; width: 600px" />
+
+* To arrange the first set of nav link in the center give it a class and use `margin: 0 auto;`.
+  I use `flex-grow: 1` on logo too that is awkward, but possible.\
+  auto margins are too much capable.
+
+ 
