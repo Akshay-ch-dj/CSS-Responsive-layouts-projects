@@ -1,0 +1,19 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* import fonts from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto&family=Sofia&display=swap");
+
+/* font families */
+/*
+font-family: 'Anton', sans-serif;
+font-family: 'Gugi', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Sofia', cursive;
+*/
+
+/* Variables */

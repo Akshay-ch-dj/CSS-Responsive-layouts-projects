@@ -9,10 +9,21 @@ font-family: 'Playfair Display', serif;
 font-family: 'Roboto', sans-serif;
 */
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+}
+
+/* color variables */
+:root {
+  --color-light: #f3eed9;
+  --color-brown: #824936;
+  --color-dark: #222c2a;
 }
 
 /* container class */
@@ -30,4 +41,110 @@ body {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+/* Hero styling */
+.hero {
+  background: var(--color-light);
+  min-height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container--hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-elements {
+  width: 75%;
+  text-align: center;
+}
+
+.hero__txt {
+  font-family: "Playfair Display", serif;
+  font-size: 6rem;
+  margin: 0.2em 0;
+  color: var(--color-brown);
+}
+
+.hero__subTxt {
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  font-size: 1.8rem;
+  margin: 0.5em 0;
+}
+
+/* content styling */
+
+p,
+h1,
+h3 {
+  margin: 0;
+}
+
+.content {
+  margin: 6rem 0;
+}
+
+.container__heading {
+  text-align: center;
+  color: var(--color-brown);
+  font-size: 3.6rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 3rem;
+}
+
+.content__text {
+  font-size: 2.1rem;
+}
+
+.content__text--left {
+  padding-right: 2em;
+}
+.content__text--right {
+  padding-left: 2em;
+}
+
+/* Cards styling */
+
+.card {
+  padding: 10em 0;
+}
+
+.container--card {
+  justify-content: space-between;
+}
+
+.card__card1 {
+  background: var(--color-dark);
+}
+.card__card2 {
+  background: var(--color-brown);
+}
+
+.card__txt {
+  width: 50%;
+  padding: 0 2em;
+}
+
+.card__heading {
+  color: #fff;
+  font-size: 3.6rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 2rem;
+}
+
+.card__para {
+  color: #fff;
+  font-size: 2.1rem;
+}
+
+.card__img {
+  display: block;
+  max-width: 100%;
 }

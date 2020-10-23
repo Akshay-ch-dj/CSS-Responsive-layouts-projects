@@ -14,38 +14,44 @@
 </head>
 <body>
     <header class="hero">
-        <div class="container column">
-            <h1 class="hero__txt">Responsive layouts don’t have to be a struggle</h1>
-            <p class="hero__subTxt">lorem ipsum sit</p>
+        <div class="container container--hero">
+            <div class="hero-elements">
+                <p class="hero__subTxt">lorem ipsum sit</p>
+                <h1 class="hero__txt">Responsive layouts don’t have to be a struggle</h1>
+            </div>
         </div>
     </header>
 
-    <section class="content">
+    <main class="content">
         <div class="container column">
             <h3 class="container__heading">Quality Designs</h3>
             <div class="textbox row">
-                <p class="content__text--left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique. Arcu dui vivamus arcu felis. Sociis natoque penatibus et magnis dis.</p>
-                <p class="content__text--right">Felis donec et odio pellentesque diam volutpat. Aliquam purus sit amet luctus venenatis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Pellentesque sit amet porttitor eget dolor morbi non.</p>
+                <p class="content__text content__text--left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique. Arcu dui vivamus arcu felis. Sociis natoque penatibus et magnis dis.</p>
+                <p class="content__text content__text--right">Felis donec et odio pellentesque diam volutpat. Aliquam purus sit amet luctus venenatis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Pellentesque sit amet porttitor eget dolor morbi non.</p>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="card">
-        <div class="card__card1">
-            <div class="container row">
-                <div class="card__txt">
+    <section class="cards">
+        <div class="card card__card1">
+            <div class="container row container--card">
+                <div class="card__txt card__txt--card1">
                     <h3 class="card__heading">Made custom for you</h3>
                     <p class="card__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
-                <img src="./images/image-01.jpg" alt="" class="card__img">
+                <div class="card__img-container">
+                    <img src="./images/image-01.jpg" alt="" class="card__img">
+                </div>
             </div>
         </div>
-        <div class="card__card2">
-            <div class="container row">
-                <img src="./images/image-02.jpg" alt="" class="card__img">
-                <div class="card__txt">
-                    <h3 class="card__heading">Made custom for you</h3>
-                    <p class="card__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <div class="card card__card2">
+            <div class="container row container--card">
+                <div class="card__img-container">
+                    <img src="./images/image-02.jpg" alt="" class="card__img">
+                </div>
+                <div class="card__txt card__txt--card2">
+                    <h3 class="card__heading">Created with care</h3>
+                    <p class="card__para">Felis donec et odio pellentesque diam volutpat. Aliquam purus sit amet luctus venenatis. Turpis in eu mi bibendum neque egestas congue quisque egestas. Pellentesque sit amet porttitor eget dolor morbi non.</p>
                 </div>
             </div>
         </div>
