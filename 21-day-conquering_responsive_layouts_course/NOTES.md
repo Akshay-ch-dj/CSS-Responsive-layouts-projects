@@ -365,4 +365,48 @@ A flex-grow of 1 (`flex: 1 1 auto;`) gives the same results.
   I use `flex-grow: 1` on logo too that is awkward, but possible.\
   auto margins are too much capable.
 
- 
+
+## Media Queries
+---
+* Focussing all media queries, use specific (`screen`, `only screen`, to use with other queries)
+* min - 600px or bigger, mobile first: The basic styles kicks only in smaller screens.
+
+```css
+@media (min-width: 600px) {
+  .example {
+    background-color: olivedrab;
+  }
+}
+```
+* max - 600px or smaller: Desktop First, whats in is for smaller screens.
+
+```css
+@media (max-width: 600px) {
+  .example {
+    background-color: orangered;
+  }
+}
+```
+* Order is important in media queries.
+* Use this lines always in html to use media queries,
+  ```html
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  ```
+
+### Selecting the Breakpoint
+***
+
+* Breakpoint is the point when the layout starts to fail, General cases, that one need to use media queries, mobile first or desktop first at the point there initial design starts to fail.
+* Don't target specific parts only with a breakpoint, choose a general one.
+* Here in the course, where the bottom area gets narrower(hard to read), take it as the breakpoint,
+Change the hero part too.
+* No actual one is going to look at all possible widths: your site looks OK, It only needs for the general devices, the site needed to look good. The more things you put in it is more harder to maintain.
+* General small screen: **600px**/ **700px**, mid screens: up to **900px**/**960px**, (around 900ish px get in to full grown site.)
+* Use minimum media queries as possible.
+* Visit this [link](https://www.freecodecamp.org/newsthe-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) to get an idea about the general breakpoints.
+* Use SASS and mixins like [these](https://codepen.io/davidgilbertson/pen/aBpJzO) for meaningful declarations and easy communication of CSS codes.
+
+
+### **CHALLENGE SOLUTION COMPARISON**
+---
+My [challenge solution]()

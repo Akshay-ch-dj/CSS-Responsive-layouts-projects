@@ -36,9 +36,10 @@ body {
 /* Flexbox classes */
 .row {
   display: flex;
+  justify-content: space-between;
 }
 
-.column {
+.col {
   display: flex;
   flex-direction: column;
 }
@@ -65,14 +66,14 @@ body {
   text-align: center;
 }
 
-.hero__txt {
+.hero__title {
   font-family: "Playfair Display", serif;
   font-size: 6rem;
   margin: 0.2em 0;
   color: var(--color-brown);
 }
 
-.hero__subTxt {
+.hero__txt {
   text-transform: uppercase;
   letter-spacing: 0.8rem;
   font-size: 1.8rem;
@@ -91,24 +92,30 @@ h3 {
   margin: 6rem 0;
 }
 
-.container__heading {
-  text-align: center;
-  color: var(--color-brown);
+.section-title {
   font-size: 3.6rem;
   font-family: "Playfair Display", serif;
   margin-bottom: 3rem;
+}
+
+.section-title--dark {
+  color: var(--color-brown);
+}
+
+.section-title--light {
+  color: #fff;
 }
 
 .content__text {
   font-size: 2.1rem;
 }
 
-.content__text--left {
+/* .content__text--left {
   padding-right: 2em;
 }
 .content__text--right {
   padding-left: 2em;
-}
+} */
 
 /* Cards styling */
 
@@ -116,27 +123,16 @@ h3 {
   padding: 10em 0;
 }
 
-.container--card {
-  justify-content: space-between;
-}
-
-.card__card1 {
+.card--dark {
   background: var(--color-dark);
 }
-.card__card2 {
+.card--brown {
   background: var(--color-brown);
 }
 
 .card__txt {
   width: 50%;
   padding: 0 2em;
-}
-
-.card__heading {
-  color: #fff;
-  font-size: 3.6rem;
-  font-family: "Playfair Display", serif;
-  margin-bottom: 2rem;
 }
 
 .card__para {
@@ -147,4 +143,10 @@ h3 {
 .card__img {
   display: block;
   max-width: 100%;
+}
+
+/* owl selector for spacing between img and text */
+.card__img-container + .card__txt,
+.card__txt + .card__img-container {
+  margin-left: 5em;
 }

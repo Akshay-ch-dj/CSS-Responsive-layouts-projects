@@ -1,0 +1,47 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+}
+
+.example {
+  width: 90%;
+  margin: 5em auto;
+  padding: 10em 0;
+  background-color: steelblue;
+}
+
+/* Focussing all media queries */
+/* min - 600px or bigger, mobile first: larger ones(global) kicks in at small sizes*/
+@media (min-width: 600px) {
+  .example {
+    background-color: olivedrab;
+  }
+}
+
+/* Now from 800px and up */
+@media (min-width: 800px) {
+  .example {
+    background-color: orchid;
+  }
+}
+
+/* max - 600px or smaller: Desktop First, whats in is for mobiles*/
+@media (max-width: 600px) {
+  /* .example {
+    background-color: olivedrab;
+  } */
+}
+
+/* Order is important in media queries */
