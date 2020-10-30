@@ -403,10 +403,16 @@ Change the hero part too.
 * No actual one is going to look at all possible widths: your site looks OK, It only needs for the general devices, the site needed to look good. The more things you put in it is more harder to maintain.
 * General small screen: **600px**/ **700px**, mid screens: up to **900px**/**960px**, (around 900ish px get in to full grown site.)
 * Use minimum media queries as possible.
-* Visit this [link](https://www.freecodecamp.org/newsthe-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) to get an idea about the general breakpoints.
+* Visit this [link](https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) to get an idea about the general breakpoints.
 * Use SASS and mixins like [these](https://codepen.io/davidgilbertson/pen/aBpJzO) for meaningful declarations and easy communication of CSS codes.
 
 
 ### **CHALLENGE SOLUTION COMPARISON**
 ---
-My [challenge solution]()
+My [challenge solution](https://codepen.io/akshaych/pen/jOryEbV?editors=1100)
+
+* Going for the mobile first design.
+* Always set the breakpoint according to the complexity of the site.
+
+### **DAY 19 NAVBar challenge.**
+---

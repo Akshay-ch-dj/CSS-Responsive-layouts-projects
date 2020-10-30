@@ -9,15 +9,7 @@ font-family: 'Playfair Display', serif;
 font-family: 'Roboto', sans-serif;
 */
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-}
+/* Mobile first approach */
 
 /* color variables */
 :root {
@@ -26,76 +18,77 @@ body {
   --color-dark: #222c2a;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-dark);
+  /* Give the optimum font size on the body itself(reduce repetition) */
+  font-size: 2.1rem;
+  line-height: 1.6;
+}
+
+/* For image responsiveness */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* resetting inbuilt margins and setting heading */
+h1,
+h2 {
+  margin-top: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+/* main sections */
+.hero,
+.content,
+.card {
+  padding: 5em 0;
+}
+
 /* container class */
 .container {
-  max-width: 1128px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-}
-
-/* Flexbox classes */
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
+  max-width: 1128px;
 }
 
 /* Hero styling */
 .hero {
   background: var(--color-light);
+  padding: 20rem 0;
   min-height: 660px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.container--hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero-elements {
-  width: 75%;
   text-align: center;
-}
-
-.hero__title {
-  font-family: "Playfair Display", serif;
-  font-size: 6rem;
-  margin: 0.2em 0;
   color: var(--color-brown);
+  max-width: 750px;
 }
 
 .hero__txt {
   text-transform: uppercase;
   letter-spacing: 0.8rem;
   font-size: 1.8rem;
-  margin: 0.5em 0;
+  margin: 0 0 0.25em;
+  color: var(--color-dark);
+}
+
+.hero__title {
+  font-size: 5rem;
 }
 
 /* content styling */
-
-p,
-h1,
-h3 {
-  margin: 0;
-}
-
-.content {
-  margin: 6rem 0;
-}
-
 .section-title {
   font-size: 3.6rem;
-  font-family: "Playfair Display", serif;
-  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .section-title--dark {
@@ -103,24 +96,12 @@ h3 {
 }
 
 .section-title--light {
-  color: #fff;
+  color: var(--color-light);
 }
-
-.content__text {
-  font-size: 2.1rem;
-}
-
-/* .content__text--left {
-  padding-right: 2em;
-}
-.content__text--right {
-  padding-left: 2em;
-} */
 
 /* Cards styling */
-
 .card {
-  padding: 10em 0;
+  color: #fff;
 }
 
 .card--dark {
@@ -131,22 +112,64 @@ h3 {
 }
 
 .card__txt {
-  width: 50%;
-  padding: 0 2em;
+  padding: 2rem 0;
 }
 
-.card__para {
-  color: #fff;
-  font-size: 2.1rem;
+@media (min-width: 600px) {
+  p {
+    margin: 0;
+  }
+
+  .container {
+    width: 85%;
+  }
+
+  .hero__title {
+    font-size: 6rem;
+  }
+
+  .card__img {
+    margin: 0 auto;
+  }
 }
 
-.card__img {
-  display: block;
-  max-width: 100%;
+@media (min-width: 800px) {
+  /* Flexbox classes */
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col + .col {
+    margin-left: 3em;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+
+  .content-title {
+    text-align: center;
+  }
+
+  .card__txt {
+    width: 50%;
+  }
+
+  /* owl selector for spacing between img and text */
+  .card__img-container + .card__txt,
+  .card__txt + .card__img-container {
+    margin-left: 1em;
+  }
 }
 
-/* owl selector for spacing between img and text */
-.card__img-container + .card__txt,
-.card__txt + .card__img-container {
-  margin-left: 5em;
+@media (min-width: 1200px) {
+  .container {
+    width: 80%;
+  }
 }
