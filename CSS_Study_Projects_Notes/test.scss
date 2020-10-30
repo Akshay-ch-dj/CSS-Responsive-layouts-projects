@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600,800|PT+Mono");
+
+* {
+  box-sizing: border-box;
+}
+
+$vars: (
+  yellow: #ff0,
+  blk: #000,
+  lightblue: #a1dfcd,
+  ff: sans-serif,
+  fw-n: 300,
+  fw-m: 600,
+  fw-b: 800,
+);
+
+@mixin var($property, $variable) {
+  #{$property}: map-get($vars, $variable);
+  #{$property}: var(--#{$variable});
+}
+
+:root {
+  @each $property, $value in $vars {
+    --#{$property}: #{$value};
+  }
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  background: radial-gradient(white 50%, #cecfce);
+}
+
+.background {
+  position: absolute;
+  top: -15vw;
+  left: 5vw;
+  width: 200%;
+  font-size: 5vw;
+  font-family: "PT Mono", monospace;
+  @include var(color, lightblue);
+  padding-left: 10vw;
+  text-indent: -5vw;
+  transform: rotate(-15deg);
+}
+
+.title-container {
+  @include var(background, yellow);
+  padding: 1em 25vw 1em 0;
+  width: 90vw;
+  text-align: right;
+  position: relative;
+}
+
+.title {
+  font-size: 7.5vw;
+
+  span {
+    @include var(font-weight, fw-n);
+    display: block;
+    font-size: 0.85em;
+  }
+}
+
+.episode-number {
+  position: absolute;
+  top: -40vw;
+  right: -9vw;
+  font-size: 55vw;
+  line-height: 0;
+  @include var(font-weight, fw-m);
+}
+
+button {
+  margin: 2rem 0rem 0rem 2rem;
+  padding: 1rem;
+}
