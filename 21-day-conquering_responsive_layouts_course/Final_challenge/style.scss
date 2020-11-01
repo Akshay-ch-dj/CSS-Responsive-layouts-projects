@@ -1,0 +1,547 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+Fonts used
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+// Using sass for the fallback of css variables
+$vars: (
+  primary-color: #a59678,
+  dark: #2e323f,
+  semi-dark: #3b4050,
+  grey: #6f737f,
+  semi-grey: #d8d7dd,
+  white: #ffffff,
+);
+
+:root {
+  @each $prop, $value in $vars {
+    --#{$prop}: #{$value};
+  }
+}
+
+// mixin to call to apply styles
+@mixin var($property, $variable) {
+  // fallback
+  #{$property}: map-get($vars, $variable);
+  // variable
+  #{$property}: var(--#{$variable});
+}
+
+// Main css
+
+html {
+  // font size base set to 10px
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  // For nav-toggle button positioning
+  position: relative;
+}
+
+// Navbar styling
+header {
+  @include var(background, dark);
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+// Hamburger button
+.nav-toggle {
+  position: absolute;
+  left: 0;
+
+  cursor: pointer;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0em;
+  border-radius: 50%;
+  @include var(background, semi-dark);
+  @include var(color, white);
+  transition: opacity 250ms ease;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: 0.75;
+}
+
+.hamburger {
+  z-index: 10;
+  width: 50%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 80%;
+  }
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  @include var(background, white);
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.logo-img {
+  margin: 0.5rem 0;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__list {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.nav__item {
+  list-style: none;
+  padding: 0.8rem 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  @include var(color, white);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  @include var(color, grey);
+}
+
+.nav__link--button {
+  @include var(color, primary-color);
+  @include var(background, white);
+  padding: 0.2em 0.8em;
+  border-radius: 100px;
+}
+
+// JS toggle classes
+
+// default
+.nav {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+// modifier
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
+}
+
+// Hero section
+h1,
+h4,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  @include var(background, semi-dark);
+  @include var(color, white);
+  padding: 5em 0;
+}
+
+.hero__title {
+  font-size: 4.5rem;
+  line-height: 1.2em;
+
+  .hero__title-highlight {
+    @include var(color, primary-color);
+  }
+}
+
+.hero-content {
+  padding: 1em 0;
+}
+
+.hero__text {
+  font-size: 1.8 rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero__btn {
+  padding: 0.5em 2em;
+  margin-top: 2em;
+  border: 0;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  @include var(background, primary-color);
+  @include var(color, white);
+}
+
+// main section
+
+// section1
+.specs {
+  @include var(background, semi-grey);
+  padding: 1em 0;
+}
+
+.specs__box {
+  padding: 1em 0;
+}
+
+.specs__title {
+  @include var(color, primary-color);
+  font-size: 2.5rem;
+  padding: 0.5em 0;
+}
+
+.specs__text {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+// section 2
+
+.detail,
+.side-content {
+  padding: 1em 0;
+}
+
+.detail__title {
+  font-size: 2.5rem;
+  @include var(color, primary-color);
+  margin-bottom: 1.5rem;
+}
+.detail__text {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.detail-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: 1em 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// aside- side box
+.side-box {
+  @include var(background, semi-dark);
+  margin-bottom: 2rem;
+  padding: 1em;
+  text-align: center;
+}
+
+.side-box__title {
+  @include var(color, primary-color);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.side-box__text {
+  font-family: "Montserrat", sans-serif;
+  @include var(color, white);
+  font-size: 1.8rem;
+}
+
+// footer
+.footer {
+  @include var(background, semi-dark);
+  @include var(color, white);
+  padding: 1em 0;
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 2.4rem;
+  padding: 0.5em 0;
+}
+
+.footer-left,
+.footer-right {
+  margin: 1rem 0;
+}
+
+.footer-left__title,
+.col__title {
+  @include var(color, primary-color);
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-left__text,
+.col__item {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-right__column {
+  margin: 1em 0;
+}
+
+.col__list {
+  list-style: none;
+}
+
+.col__item {
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 700px) {
+  // Navbar
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    position: relative;
+    height: auto;
+    margin: auto 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav__list {
+    padding: 0;
+  }
+
+  .nav__list--primary {
+    margin-left: 2rem;
+  }
+
+  .nav__item {
+    padding: 0.2rem 0;
+    margin-left: 2.5rem;
+  }
+
+  //   Hero
+  .hero-title {
+    width: 40%;
+  }
+
+  .hero__title {
+    font-size: 7rem;
+  }
+
+  .hero-content {
+    width: 50%;
+    align-self: flex-end;
+    padding: 1rem 0;
+  }
+
+  .hero__text {
+    font-size: 2 rem;
+  }
+
+  .hero__btn {
+    font-size: 2rem;
+  }
+
+  //main section
+
+  // section1
+  .col + .col {
+    margin-left: 2em;
+  }
+
+  .specs {
+    padding: 2em 0 3em;
+  }
+
+  .specs__box {
+    text-align: center;
+  }
+
+  // section 2
+  .detail-img {
+    height: 250px;
+  }
+
+  .detail__title {
+    font-size: 3.4rem;
+  }
+
+  .detail__text {
+    font-size: 2rem;
+  }
+
+  // side-box
+  .side-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .side-box + .side-box {
+    margin-left: 3%;
+  }
+
+  .side-box__title {
+    font-size: 2.7rem;
+  }
+
+  // Footer
+  .footer,
+  .footer__title {
+    padding: 1em 0;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer-left {
+    margin: 0 auto;
+    margin-bottom: 2em;
+    max-width: 60%;
+  }
+
+  .footer-right__column {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  //   Hero
+  .hero__title {
+    font-size: 9rem;
+  }
+
+  .hero__text,
+  .hero__btn {
+    font-size: 2.4rem;
+  }
+
+  //main section
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5em 0;
+  }
+
+  // section1
+  .specs {
+    padding: 4em 0;
+  }
+
+  .specs__title {
+    font-size: 3rem;
+  }
+  // section 2
+  .detail {
+    max-width: 60%;
+  }
+
+  .detail__title {
+    font-size: 3.6rem;
+  }
+
+  .detail__text {
+    font-size: 2.1rem;
+  }
+
+  .detail-img {
+    width: 100%;
+    height: auto;
+    margin: 2em 0;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  // aside
+  .side-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+  }
+
+  .side-box + .side-box {
+    margin-left: 0%;
+    margin-top: 4%;
+  }
+
+  .side-box__title {
+    font-size: 3rem;
+  }
+
+  // Footer
+  .footer__title {
+    padding-bottom: 2em;
+  }
+
+  .footer {
+    text-align: left;
+    padding: 2em 0;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-right {
+    width: 50%;
+    margin: 0;
+  }
+
+  .footer-left {
+    width: 30%;
+    margin: 0;
+  }
+}

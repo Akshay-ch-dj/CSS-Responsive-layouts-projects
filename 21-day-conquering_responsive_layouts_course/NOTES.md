@@ -406,6 +406,40 @@ Change the hero part too.
 * Visit this [link](https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) to get an idea about the general breakpoints.
 * Use SASS and mixins like [these](https://codepen.io/davidgilbertson/pen/aBpJzO) for meaningful declarations and easy communication of CSS codes.
 
+```scss
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-portait-only {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-desktop-only {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+// To use
+.phone-only {
+  @include for-phone-only { background: purple; }
+}
+
+// If we add these classes to respective elements the styles applied accordingly.
+```
+
 
 ### **CHALLENGE SOLUTION COMPARISON**
 ---
@@ -416,3 +450,28 @@ My [challenge solution](https://codepen.io/akshaych/pen/jOryEbV?editors=1100)
 
 ### **DAY 19 NAVBar challenge.**
 ---
+* Comparing Kevins solution.
+* Not much difference as usual kevins, code is compact.
+
+### **DAY 21 the final challenge**
+---
+
+#### DESIGN CONSIDERATIONS
+---
+1. Mobile first approach.
+2. Write semantic html, with all img alts, aria tags etc..
+3. Use BEM for naming html elements.
+4. 2 breakpoints(as per the design provided).
+5. Use CSS custom properties.
+6. Use sass, with css fallback using sass and mixins for the viwports..
+7. Use reusable classes and targeted functional classes.
+8. Use flexbox more.
+9. Get familiar with Firefox developer tools.
+10. At last as bonus, make a day/night theme switcher.
+
+**HTML**
+
+* header-> nav
+* section-> hero
+* main -> section1, section 2, aside
+* footer.

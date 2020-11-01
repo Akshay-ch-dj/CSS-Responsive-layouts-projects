@@ -86,6 +86,11 @@ header {
   cursor: pointer;
 }
 
+.nav__link:hover,
+.nav__link:focus {
+  opacity: 0.5;
+}
+
 .nav__link--button {
   background: #fff;
   color: #38cfd9;
@@ -193,6 +198,7 @@ header {
 
   .nav {
     visibility: visible;
+    position: relative;
     display: flex;
     justify-content: space-between;
     height: auto;
@@ -203,7 +209,7 @@ header {
   }
 
   .nav__list--primary {
-    margin-left: 10%;
+    margin-left: 2rem;
   }
 
   li + li {
