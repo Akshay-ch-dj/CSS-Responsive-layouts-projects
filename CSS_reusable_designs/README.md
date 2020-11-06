@@ -13,3 +13,6 @@ A starry night theme with moving clouds, using CSS and vanilla JS, it is a part 
     <img src="./Night_star_animations/images/design-base.jpg"
                     alt="figma-design"
                     style="display:block; width: 800px; height=auto" />
+  * ### Style 1
+    ---
+  * View here: 🌙 [Starry Night](https://codepen.io/akshaych/full/dyXqoEB)
