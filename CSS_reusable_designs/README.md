@@ -7,7 +7,9 @@ A starry night theme with moving clouds, using CSS and vanilla JS, it is a part 
 
   * ### Figma design.
     ---
-    - Here is the link to sample [proto design](https://www.figma.com/file/WTfrAjPEcBDMEfZQQuthZE/Starry-Night)
-    <img src="./Night_star_animations/images/Figma_design.jpg"
+    - Here is the link to sample [design](https://www.figma.com/file/WTfrAjPEcBDMEfZQQuthZE/Starry-Night?node-id=0%3A1)
+
+
+    <img src="./Night_star_animations/images/design-base.jpg"
                     alt="figma-design"
-                    style="display:block; width: 600px; height=auto" />
+                    style="display:block; width: 800px; height=auto" />

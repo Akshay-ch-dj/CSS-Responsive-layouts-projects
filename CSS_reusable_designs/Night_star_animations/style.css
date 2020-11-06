@@ -1,0 +1,235 @@
+/* Design credits:- onlinetutorials4designers */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scene-night1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(#111425, #3751e0);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* The stars */
+.scene-night1 i {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: blink-move linear infinite;
+}
+
+@keyframes blink-move {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+.moon {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-30%, -10%);
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#111425, #3751e0);
+  background-attachment: fixed;
+}
+
+.trees {
+  position: absolute;
+  bottom: 0%;
+  left: -30%;
+  height: 60%;
+  transform: scale(1);
+  z-index: 10000;
+}
+
+.cloud1 {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  max-width: 350px;
+  z-index: 1000;
+  animation: animateCloud 50s linear infinite;
+  mix-blend-mode: luminosity;
+  opacity: 0.5;
+  animation-delay: -20s;
+}
+
+.cloud2 {
+  position: absolute;
+  top: 3%;
+  left: 0;
+  max-width: 350px;
+  z-index: 1000;
+  animation: animateCloud 70s linear infinite;
+}
+
+.cloud3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 400px;
+  z-index: 1000;
+  animation: animateCloud 40s linear infinite;
+  mix-blend-mode: overlay;
+  animation-delay: -40s;
+}
+
+.cloud4 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  max-width: 500px;
+  z-index: 1000;
+  animation: animateCloud 120s linear infinite;
+  animation-delay: -30s;
+}
+
+.cloud5 {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  max-width: 100%;
+  opacity: 0.5;
+  animation: animateCloud 50s linear infinite;
+  animation-delay: -10s;
+}
+
+.cloud6 {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  opacity: 0.6;
+  max-width: 500px;
+  mix-blend-mode: overlay;
+  animation: animateCloudSize 80s linear infinite;
+}
+
+@keyframes animateCloud {
+  0% {
+    transform: translateX(-100%) scale(1);
+  }
+  100% {
+    transform: translateX(400%) scale(1.5);
+  }
+}
+
+@keyframes animateCloudSize {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(2);
+  }
+  60% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 700px) {
+  .trees {
+    left: -40%;
+  }
+
+  .moon {
+    width: 70px;
+    height: 70px;
+    /* width: 100px
+  height: 100px */
+  }
+
+  .moon::after {
+    top: -12px;
+    left: 12px;
+  }
+
+  .cloud1 {
+    top: 5%;
+    max-width: 400px;
+  }
+
+  .cloud2 {
+    top: 3%;
+    max-width: 350px;
+  }
+
+  .cloud3 {
+    top: 0;
+    max-width: 400px;
+  }
+
+  .cloud4 {
+    top: 20%;
+    max-width: 500px;
+  }
+
+  .cloud5 {
+    top: 40%;
+  }
+
+  .cloud6 {
+    top: 15%;
+    left: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .trees {
+    left: 0%;
+    height: 60%;
+    transform: scale(1.1);
+    z-index: 10000;
+  }
+
+  .moon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .moon::after {
+    top: -15px;
+    left: 15px;
+  }
+
+  .cloud1 {
+    top: 5%;
+    max-width: 400px;
+  }
+}
