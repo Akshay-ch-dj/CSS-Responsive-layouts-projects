@@ -2,3 +2,8 @@
 
 # bootstrap E-kart project assets
 Bootsrap_practice/e_kart_bootstrap/assets/
+package.json
+.prettierrc
+node_modules
+.eslintrc.json
+package-lock.json
