@@ -1,6 +1,15 @@
 # CONQUERING RESPONSIVE LAYOUTS
+
 ---
+
+* [NOTES ON CSS FLEXBOX.](NOTES-flexbox.md)
+* [NOTES ON CSS GRID.](../CSS_Study_Projects_Notes/CSS_grid_learn/readme.md)
+* [NOTES ON CSS CUSTOM PROPERTIES.](NOTES-css_custom_properties.md)
+* [NOTES ON CSS Before and After](../CSS_Study_Projects_Notes/css_before_after_learn/readme.md)
+* [NOTES ON CSS min, max & clamp.](../CSS_Study_Projects_Notes/CSS_min_max_clamp_learn/readme.md)
+
 ## Get Better each day.
+
 Thanks to this amazing man: [Kevin Powell](https://www.kevinpowell.co/)
 <img src="./images/kevinpowell.png"
     alt="paragraph-plain"
@@ -9,7 +18,6 @@ Thanks to this amazing man: [Kevin Powell](https://www.kevinpowell.co/)
 ### Introduction
 * To blackout solutions(to mark it as a spoiler), use the "||" character to start and end a covered out text\
 in Discord.
-
 
 By default everything is responsive, ie if there is only html and there is no CSS bounded everything is responsive, \
 we are the ones adding rules in the form of CSS, which eventually breaks the responsiveness,
@@ -283,6 +291,8 @@ predictable and easier to control,
 * If the information to be displayed is different from the main it can be set in a `aside` tag.
 * Organizing styles in css, kevin keeps his typography stuffs on the top section.
 
+* [My solution:- ](https://codepen.io/akshaych/full/jOryEbV)
+
 #### Making a `nav` using flexbox
 
 * Done my soln, crosschecking with kevin's
@@ -290,6 +300,8 @@ predictable and easier to control,
 * Adding a move to right, nav__link--right, class to some nav items to move them to right.
 * The `margin-left: auto`,pushes things all the way to left, which is a good approach, another common approaches
 * Using the `justify-content: space-between`, avoiding unnecessary margin on the last item using the, adjacent sibling selector.
+
+* [My solution:- ](https://codepen.io/akshaych/full/abZOELy)
 
 #### Adding a nav logo
 * Don't add it to the nav, if it is a link, then there will be two links,to the home section.
@@ -365,6 +377,7 @@ A flex-grow of 1 (`flex: 1 1 auto;`) gives the same results.
   I use `flex-grow: 1` on logo too that is awkward, but possible.\
   auto margins are too much capable.
 
+* [My solution:- ](https://codepen.io/akshaych/full/yLJKKzN)
 
 ## Media Queries
 ---
@@ -469,9 +482,4 @@ My [challenge solution](https://codepen.io/akshaych/pen/jOryEbV?editors=1100)
 9. Get familiar with Firefox developer tools.
 10. At last as bonus, make a day/night theme switcher.
 
-**HTML**
-
-* header-> nav
-* section-> hero
-* main -> section1, section 2, aside
-* footer.
+* [My challenge solution:-](https://codepen.io/akshaych/full/rNLveBr)

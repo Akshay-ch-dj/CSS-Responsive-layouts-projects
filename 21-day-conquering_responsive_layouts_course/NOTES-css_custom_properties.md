@@ -1,7 +1,6 @@
 # CSS CUSTOM PROPERTIES
 ---
 
-
 ## CSS VARIABLES/CUSTOM PROPERTIES: PART 1
 ---
 From a wide perspective, CSS variables just makes the whole css more manageable, can define custom colors, in a professional design that will got a color theme, we don't need to use multiple colors, on a project, so the custom colors in the design are specified as css variable along with other custom properties..
